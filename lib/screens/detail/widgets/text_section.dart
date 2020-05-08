@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 class TextSection extends StatelessWidget {
   final String _title;
   final String _body;
-  static const double _hPad = 16.0;
   static const double _vPad = 8.0;
-  static const double _sectionSpacing = 16.0;
 
   TextSection(this._title, this._body);
 
@@ -16,11 +14,11 @@ class TextSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.symmetric(vertical: _vPad, horizontal: _hPad),
+          padding: EdgeInsets.symmetric(vertical: _vPad),
           child: Text(_title, style: Theme.of(context).textTheme.headline6),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(_hPad, 0, _hPad, _sectionSpacing),
+          padding: EdgeInsets.symmetric(vertical: _vPad),
           child: Text(_body, style: Theme.of(context).textTheme.bodyText2),
         ),
       ],

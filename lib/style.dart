@@ -17,7 +17,7 @@ const AppBarTextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontWeight: FontWeight.w600,
   fontSize: BodyTextSize,
-  color: Colors.black,
+  color: TextColorDark,
 );
 
 const TitleTextStyle = TextStyle(

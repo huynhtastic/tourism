@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'widgets/text_section.dart';
 import '../../models/location.dart';
 import '../../widgets/image_banner.dart';
+import '../../widgets/location_info.dart';
 
 class DetailScreenArgs {
   final int id;
@@ -12,6 +13,7 @@ class DetailScreenArgs {
 
 class Detail extends StatelessWidget {
   static const routeName = '/detail';
+  static const double _hPad = 16.0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,8 @@ class Detail extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(location.name),
+        title: Text(location.name.toUpperCase()),
+        centerTitle: true,
       ),
       body: Container(
         child: SingleChildScrollView(
@@ -30,7 +33,16 @@ class Detail extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ImageBanner(location.src),
-              ..._textSections(location),
+              Padding( 
+                padding: EdgeInsets.all(_hPad),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    LocationInfo(location),
+                    ..._textSections(location),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
