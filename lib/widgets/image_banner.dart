@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ImageBanner extends StatelessWidget {
   final String _src;
-  static const double _height = 200.0;
+  static const double _height = 300.0;
 
   ImageBanner(this._src);
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/detail.dart';
+import './widgets/tile_overlay.dart';
+import '../detail/detail.dart';
 import '../../models/location.dart';
+import '../../widgets/image_banner.dart';
 
 class Locations extends StatelessWidget {
   static const routeName = '/';
@@ -14,8 +16,7 @@ class Locations extends StatelessWidget {
       appBar: AppBar(
         title: Text('Locations'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
+      body: Container(
         child: ListView.builder(
           itemCount: locations.length,
           itemBuilder: (context, index) =>
@@ -27,8 +28,23 @@ class Locations extends StatelessWidget {
 
   Widget _buildItem(BuildContext context, Location location) {
     return GestureDetector(
-      child: Text(location.name),
-      onTap: () => _onLocationTap(context, 1),
+      child: locationTile(location),
+      onTap: () => _onLocationTap(context, location.id),
+    );
+  }
+
+  Widget locationTile(Location location) {
+    return Container(
+      height: 300,
+      child: Stack(
+        children: <Widget>[
+          ImageBanner(location.src),
+          TileOverlay(
+            location,
+            darkTheme: true,
+            ),
+        ],
+      )
     );
   }
 

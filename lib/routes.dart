@@ -1,5 +1,5 @@
 import 'screens/location/locations.dart';
-import 'screens/location/widgets/detail.dart';
+import 'screens/detail/detail.dart';
 
 final routes = {
   Locations.routeName: (context) => Locations(),

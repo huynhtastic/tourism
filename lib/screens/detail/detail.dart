@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'image_banner.dart';
-import 'text_section.dart';
-import '../../../models/location.dart';
+import 'widgets/text_section.dart';
+import '../../models/location.dart';
+import '../../widgets/image_banner.dart';
 
 class DetailScreenArgs {
   final int id;

@@ -6,6 +6,11 @@ const BodyTextSize = 16.0;
 
 const String FontNameDefault = 'Montserrat';
 
+const Color TextColorDark = Colors.black;
+const Color TextColorLight = Colors.white;
+const Color TextColorAccent = Colors.red;
+const Color TextColorFaint = Color.fromRGBO(125, 125, 125, 1.0);
+
 const AppBarTextStyle = TextStyle(
   fontFamily: FontNameDefault,
   fontWeight: FontWeight.w300,
