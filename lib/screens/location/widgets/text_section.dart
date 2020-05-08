@@ -5,6 +5,7 @@ class TextSection extends StatelessWidget {
   final String _body;
   static const double _hPad = 16.0;
   static const double _vPad = 8.0;
+  static const double _sectionSpacing = 16.0;
 
   TextSection(this._title, this._body);
 
@@ -19,7 +20,7 @@ class TextSection extends StatelessWidget {
           child: Text(_title, style: Theme.of(context).textTheme.headline6),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: _hPad),
+          padding: EdgeInsets.fromLTRB(_hPad, 0, _hPad, _sectionSpacing),
           child: Text(_body, style: Theme.of(context).textTheme.bodyText2),
         ),
       ],
