@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../../../style.dart';
 import '../../../models/location.dart';
+import '../../../widgets/location_info.dart';
 
 class TileOverlay extends StatelessWidget {
-  final Location _location;
-  final bool darkTheme;
+  final Location location;
 
 
-  TileOverlay(this._location, {this.darkTheme = false});
+  TileOverlay(this.location);
 
   @override
   Widget build(BuildContext context) {
-    final textColor = this.darkTheme ? TextColorLight : TextColorDark;
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -24,11 +21,9 @@ class TileOverlay extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.5),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(_location.name, style: Theme.of(context).textTheme.headline6.copyWith(color: textColor),)
-            ],
+          child: LocationInfo(
+            location,
+            darkTheme: true,
           ),
         ),
       ],

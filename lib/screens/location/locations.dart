@@ -14,7 +14,8 @@ class Locations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Locations'),
+        title: Text('TOURISM'),
+        centerTitle: true,
       ),
       body: Container(
         child: ListView.builder(
@@ -39,10 +40,7 @@ class Locations extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           ImageBanner(location.src),
-          TileOverlay(
-            location,
-            darkTheme: true,
-            ),
+          TileOverlay(location),
         ],
       )
     );

@@ -4,9 +4,11 @@ class Location {
   final int id;
   final String name;
   final String src;
+  final String itnerary;
+  final String package;
   final List<LocationFact> facts;
 
-  Location(this.id, this.name, this.src, this.facts);
+  Location(this.id, this.name, this.src, this.itnerary, this.package, this.facts);
 
   static Location fetchById(int locationId) {
     final locations = Location.fetchAll();
@@ -18,17 +20,21 @@ class Location {
   }
 
   static List<Location> fetchAll() => [
-        Location(1, 'Kiyomizu-dera', 'assets/images/kiyomizu-dera.jpg', [
-          LocationFact(
-              'Summary',
-              'Kiyomizu-dera, officially Otowa-san Kiyomizu-dera, is an '
-                  'independent Buddhist temple in eastern Kyoto. The temple is '
-                  'part of the Historic Monuments of Ancient Kyoto UNESCO '
-                  'World Heritage site.',),
-          LocationFact(
-              'Architectural Style', 'Japanese Buddhist architecture.'),
-        ]),
-        Location(2, 'Mount Fuji', 'assets/images/fuji.jpg', [
+        Location(
+          1, 'Kiyomizu-dera', 'assets/images/kiyomizu-dera.jpg',
+          'Day 1: 9:00AM - 1:30PM',
+          'Standard Package',
+            [
+              LocationFact(
+                  'Summary',
+                  'Kiyomizu-dera, officially Otowa-san Kiyomizu-dera, is an '
+                      'independent Buddhist temple in eastern Kyoto. The temple is '
+                      'part of the Historic Monuments of Ancient Kyoto UNESCO '
+                      'World Heritage site.',),
+              LocationFact(
+                  'Architectural Style', 'Japanese Buddhist architecture.'),
+            ]),
+        Location(2, 'Mount Fuji', 'assets/images/fuji.jpg', 'Day 2: 2:00PM - 3:30PM', 'Standard Package', [
           LocationFact(
               'Summary',
               'Japan’s Mt. Fuji is an active volcano about 100 kilometers '
@@ -42,7 +48,7 @@ class Location {
               'There are three cities that surround Mount Fuji: Gotemba, '
               'Fujiyoshida and Fujinomiya.',),
         ]),
-        Location(3, 'Arashiyama Bamboo Grove', 'assets/images/arashiyama.jpg', [
+        Location(3, 'Arashiyama Bamboo Grove', 'assets/images/arashiyama.jpg', 'Day 1: 4:00PM - 5:00PM', 'Standard Package', [
           LocationFact('Summary',
               'While we could go on about the ethereal glow and seemingly '
               'endless heights of this bamboo grove on the outskirts of Kyoto, '
