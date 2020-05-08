@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'routes.dart';
+import 'style.dart';
 
 class App extends StatelessWidget {
   @override
@@ -8,6 +9,21 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Tourism',
       routes: routes,
+      theme: _theme(),
+    );
+  }
+
+  ThemeData _theme() {
+    return ThemeData(
+      appBarTheme: AppBarTheme(
+        textTheme: TextTheme(
+          headline6: AppBarTextStyle,
+        ),
+      ),
+      textTheme: TextTheme(
+        headline6: TitleTextStyle,
+        bodyText2: Body2TextStyle,
+      ),
     );
   }
 }
